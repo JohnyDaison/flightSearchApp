@@ -1,0 +1,22 @@
+<label class="order-label">Order by:</label>
+<div class="btn-group order-options">
+    <label class="btn btn-primary" ng-model="orderType" uib-btn-radio="'dTime'">Departure Time</label>
+    <label class="btn btn-primary" ng-model="orderType" uib-btn-radio="'price'">Price</label>
+</div>
+
+<div class="result" ng-repeat="result in results | orderBy:orderType">
+    <div class="header">
+        <span class="location">From: {{result.cityFrom}}</span>
+        <span class="time">at {{result.dTime*1000 | date: 'short'}}</span>
+    </div>
+    <div class="header">
+        <span class="location">To: {{result.cityTo}}</span>
+        <span class="time">at {{result.aTime*1000 | date: 'short'}}</span>
+    </div>
+    <em>Price: {{result.conversion | formatMoney}}</em><br />
+    Flight duration: {{result.fly_duration}} <br />
+    Routes:
+        <div class="route" ng-repeat="rt in result.route">
+        {{rt.cityFrom}}-{{rt.cityTo}}
+        </div>
+</div>

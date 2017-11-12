@@ -1,0 +1,43 @@
+<div>
+    <div class="col-md-6">
+    <label>From:</label>
+        <p class="input-group">
+            <input type="text" ng-model="fromSelected" placeholder="From" uib-typeahead="address as address.value for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults1" class="form-control">
+            <i ng-show="loadingLocations">Loading</i>
+            <div ng-show="noResults1">
+              <i>No Results Found</i> 
+            </div>
+        </p>
+    </div>
+    
+    <div class="col-md-6">
+    <label>To:</label>
+        <p class="input-group">
+            <input type="text" ng-model="toSelected" placeholder="To" uib-typeahead="address as address.value for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults2" class="form-control">
+            <i ng-show="loadingLocations">Loading</i>
+            <div ng-show="noResults2">
+              <i>No Results Found</i> 
+            </div>
+        </p>
+    </div>
+
+      <div class="col-md-6">
+        <label>Departure Date:</label> <input class="interval-checkbox" type="checkbox" ng-model="interval" /> interval
+            <p class="input-group">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popupsOpen[1]" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openPopup(1)"><i>Calendar</i></button>
+              </span>
+            </p>
+            
+            <p class="input-group" ng-show="interval">
+              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDate" is-open="popupsOpen[2]" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openPopup(2)"><i>Calendar</i></button>
+              </span>
+            </p>
+        <button type="button" class="btn btn-sm btn-default" ng-click="search()">Search</button>
+      </div>
+
+    <hr />
+</div>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="flightSearchApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Flight Search</title>
+        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/mycss.css">
+        
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+        <script src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/searchform.js"></script>
+        <script src="js/results.js"></script>
+        
+    </head>
+    <body id="index">
+        <div ui-view="form"></div>
+        <div ui-view="results"></div>
+    </body>
+</html>

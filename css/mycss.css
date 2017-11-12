@@ -1,0 +1,44 @@
+.glyphicon-chevron-left:after{
+    content: '<';
+}
+
+.glyphicon-chevron-right:after{
+    content: '>';
+}
+
+.interval-checkbox {
+    margin-left: 20px;
+}
+
+.order-label {
+    margin-left: 20px;
+}
+
+.order-options {
+    margin-left: 10px;
+}
+
+.result {
+    border: 1px black solid;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 5px;
+}
+
+.result .header {
+    font-weight: bold;
+}
+
+.result .header  .location{
+    min-width: 200px;
+    display: inline-block;
+}
+
+.result .header  .time{
+    font-style: italic;
+    display: inline-block;
+}
+
+.route {
+    margin-left: 10px;
+}
